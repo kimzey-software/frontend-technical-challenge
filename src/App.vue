@@ -7,8 +7,8 @@ defineOptions({
 <template>
   <div>
     <nav>
-      <router-link to="/">Search</router-link> |
-      <router-link to="/saved">Saved</router-link>
+      <router-link to="/"></router-link>
+      <router-link to="/saved"></router-link>
     </nav>
 
     <router-view />

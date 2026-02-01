@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { getZipInfo } from '../api/zippopotam'
+import { getOrCreateUserId } from '../services/userService'
+import { saveZip } from '../api/zipBackend'
+
 
 const zip = ref('')
 const loading = ref(false)
@@ -25,6 +28,21 @@ async function searchZip() {
     loading.value = false
   }
 }
+async function onSave() {
+  const userId = await getOrCreateUserId()
+
+  await saveZip({
+    userId: Number(userId),
+    zipCode: String(zip.value),
+    city: data.value.places[0]['place name'],
+    state: data.value.places[0]['state abbreviation'],
+    latitude: Number(data.value.places[0].latitude),
+    longitude: Number(data.value.places[0].longitude),
+    country: data.value.country,
+    observations: "",
+})
+  alert('Saved!')
+}
 </script>
 
 <template>
@@ -43,6 +61,9 @@ async function searchZip() {
       <p><b>Country:</b> {{ data.country }}</p>
       <p><b>Latitude:</b> {{ data.places[0].latitude }}</p>
       <p><b>Longitude:</b> {{ data.places[0].longitude }}</p>
+      <button @click="onSave">Save ZIP</button>
+      
+
     </div>
   </div>
 </template>
