@@ -109,7 +109,7 @@ Payload example:
   "userId": "uuid-123",
   "zip": "90210",
   "city": "Beverly Hills",
-  "state": "CA"
+  "state": "CA",
   "latitude": 34.0901,
   "longitude": -118.4065,
   "observations": "optional notes"
