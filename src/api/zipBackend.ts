@@ -39,3 +39,29 @@ export async function getUserZips(userId: string) {
   const json = text ? JSON.parse(text) : []
   return json.data || []   
 }
+
+export async function updateZip(id: string, payload: any) {
+  const res = await fetch(`${BASE}/zip-codes/${id}`, {
+    method: 'PATCH',
+    headers: {
+      Authorization: `Bearer ${TOKEN}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  })
+
+  const text = await res.text()
+  if (!res.ok) throw new Error(text || 'Update failed')
+
+  return text ? JSON.parse(text) : null
+}
+
+export async function deleteZip(id: string) {
+  const res = await fetch(`${BASE}/zip-codes/${id}`, {
+    method: 'DELETE',
+    headers: { Authorization: `Bearer ${TOKEN}` },
+  })
+
+  const text = await res.text()
+  if (!res.ok) throw new Error(text || 'Delete failed')
+}
