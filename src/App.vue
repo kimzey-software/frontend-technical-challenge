@@ -5,7 +5,7 @@ defineOptions({
 </script>
 
 <template>
-  <div class="w-full h-dvh flex flex-col justify-center items-center">
+  <!-- <div class="w-full h-dvh flex flex-col justify-center items-center">
     <a href="https://vite.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
@@ -13,9 +13,8 @@ defineOptions({
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
     <h1>Frontend challenge</h1>
-  </div>
+  </div> -->
+  <router-view></router-view>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
