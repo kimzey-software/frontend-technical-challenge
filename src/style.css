@@ -1,1 +1,52 @@
 @import 'tailwindcss';
+@import 'flowbite-vue/index.css';
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite-vue";
+
+.custom-navbar {
+  @apply border-gray-200 bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-900 mb-8;
+}
+
+.custom-navbar-log {
+  @apply container mx-auto flex flex-wrap items-center justify-between;
+}
+
+.custom-logo {
+  @apply mr-3 h-6 sm:h-10;
+}
+
+.custom-brand {
+  @apply self-center whitespace-nowrap text-xl font-semibold dark:text-white;
+}
+
+.custom-navbar-brand-link {
+  @apply flex items-center;
+}
+
+.custom-navbar-menu {
+  @apply w-full md:block md:w-auto hidden;
+}
+
+.custom-navbar-menu-container {
+  @apply flex flex-col p-4 mt-4 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700;
+}
+
+.custom-navbar-menu-item {
+  @apply block py-2 pr-4 pl-3 rounded md:p-0 text-gray-700 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent;
+}
+
+.custom-form-input-container {
+  @apply relative flex items-center has-[input:focus]:ring-offset-0 has-[input:focus]:ring-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg has-[input:focus]:ring-blue-500 has-[input:focus]:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:has-[input:focus]:ring-blue-500 dark:has-[input:focus]:border-blue-500;
+}
+
+.custom-form-input {
+  @apply block flex-grow w-full bg-transparent text-inherit ring-offset-0 ring-0 border-0 focus:ring-offset-0 focus:ring-0 focus:border-0 dark:placeholder-gray-400 p-2.5 text-sm;
+}
+
+.custom-button {
+  @apply text-white bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg dark:bg-blue-600 focus:outline-none dark:focus:ring-blue-800 hover:bg-blue-800 dark:hover:bg-blue-700 text-sm px-4 py-2;
+}
+
+.custom-card {
+  @apply block max-w-none rounded-lg border border-gray-200 shadow-md dark:border-gray-700  bg-white dark:bg-gray-800 w-full;
+}
